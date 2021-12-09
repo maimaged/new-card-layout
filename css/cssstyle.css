@@ -1,0 +1,153 @@
+*{
+   -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+
+}
+/*global components*/
+:root{
+  --background_body:hsl(233, 47%, 7%);
+  --card_color:hsl(244, 38%, 16%);
+  --span_color:hsl(277, 64%, 61%);
+}
+
+body{
+  background-color: var(--background_body);
+  font-family: "Inter",sans-serif;
+
+}
+ul{
+  list-style: none;
+}
+.container{
+ max-width:900px;
+ height: 350px;
+  margin:100px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container .text{
+
+  background-color: var(--card_color);
+  max-width: 450px;
+  max-height: 350px;
+border-top-left-radius:2.5%;
+border-bottom-left-radius:2.5%
+
+}
+.cardinfo{
+  padding: 50px;
+}
+.text header{
+  font-size :30px; 
+  font-weight:400;
+  color: white;
+}
+.text header span{
+  color:var(--span_color);
+}
+.text section{
+  margin-top: 25px;
+  color:hsla(0, 0%, 100%, 0.75);
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+ul li h3{
+  color: hsl(0, 0%, 100%) ;
+}
+ul li{
+  color:hsla(0, 0%, 100%, 0.6);
+}
+.container .image {
+    width: 50%;
+    height: 350px; 
+    z-index: -1; /* this is used to rearrange the layers of the page*/
+    background: rgb(2,0,36);
+    background-image: linear-gradient(90deg, rgba(2,0,36,0.8) 0%, rgba(227,123,232,0.7) 1%, rgba(119,52,152,0.9) 100%)
+    ,url("../images/image-header-desktop.jpg");
+  
+    background-size: cover;
+    /*cover makes the image just as the container size*/
+    background-repeat:no-repeat ;
+    background-position: center;
+    border-top-right-radius:2.5%;
+    border-bottom-right-radius:2.5%
+    
+  }
+  /************************************************/
+  /*responsive*/
+  @media (max-width:640px){
+    .container{
+      max-width:80vw;
+      height: auto;
+      margin: 15px auto;
+     display: flex;
+     flex-direction: column-reverse;
+    
+   
+    }
+    .container .text{
+
+      background-color: var(--card_color);
+      width: 80vw;
+      border-bottom-left-radius:2.5%;
+      border-bottom-right-radius:2.5%
+     
+  }
+  .container .text .cardinfo{
+padding: 30px;
+width:80vw;
+background-color: var(--card_color);
+  }
+  .container .image{
+    width: 80vw;
+    background-image: url("../images/image-header-mobile.jpg");
+      background-size: cover;
+    /*cover makes the image just as the container size*/
+    background-repeat:no-repeat ;
+    background-position: center;
+   
+    border-top-right-radius:2.5%;
+    border-top-left-radius:2.5%;
+    position: relative;
+  }
+  .container .image .overlay{
+  
+    
+       width: 100%;
+    height: 100%;
+    background-color: hsl(277, 64%, 61%);
+    background-size: cover;
+    opacity: 0.6;
+    position: absolute;
+    background-repeat:no-repeat ;
+    background-position: center;
+  }
+  ul{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+  }
+  ul li{
+    margin-bottom:15px ;
+  }
+header,section{
+  text-align: center;
+}
+  }
